@@ -23,7 +23,9 @@ client.connect(err => {
   const productsCollection = client.db("emaShop").collection("items");
   const orderCollection = client.db("emaShop").collection("order");
 
-
+  app.get('/', (req, res) => {
+    res.send('Database connected')
+  })
 
   app.post('/addProduct', (req, res) => {
     const products = req.body;
